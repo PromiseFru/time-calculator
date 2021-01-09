@@ -12,8 +12,12 @@ def add_time(start, duration, day = ""):
     durationHour = int(splitDuration[0])
     durationMin = int(splitDuration[1])
 
-    print(splitStart, splitStart2,splitDuration)
-    print(startHour, startMin, startSign)
+    # convert start hour to 24 hours
+    if startSign == "PM":
+        startHour = startHour + 12
+
+
+    print(startHour)
 
 
 add_time("3:30 PM", "2:12")
