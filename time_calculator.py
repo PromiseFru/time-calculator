@@ -29,10 +29,18 @@ def add_time(start, duration, day = ""):
     count = int(sumHours/24)
 
     # get sign 
-    if (sumHours%20) < 12:
+    if (sumHours%24) < 12:
         sign = 'AM'
     else:
          sign = 'PM'
+    
+    # hour
+    sumHours = sumHours%24
+    # change hour to 12hour format
+    if sumHours > 12:
+        sumHours = sumHours-12
+    if sumHours == 0:
+        sumHours = 12
 
 
 
