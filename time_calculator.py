@@ -16,8 +16,15 @@ def add_time(start, duration, day = ""):
     if startSign == "PM":
         startHour = startHour + 12
 
+    # add hours
+    sumHours = startHour + durationHour
+    # add minutes
+    sumMin = startMin + durationMin
 
-    print(startHour)
+    # round up minutes
+    sumHours = sumHours + int(sumMin/60)
+
+    print(sumHours)
 
 
 add_time("3:30 PM", "2:12")
