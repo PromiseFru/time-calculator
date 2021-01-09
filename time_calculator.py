@@ -23,8 +23,15 @@ def add_time(start, duration, day = ""):
 
     # round up minutes
     sumHours = sumHours + int(sumMin/60)
+    sumMin = sumMin%60
 
-    print(sumHours)
+    # day count
+    count = int(sumHours/24)
+
+    # get sign 
+    
+
+    print(sumHours, sumMin, count)
 
 
 add_time("3:30 PM", "2:12")
