@@ -41,12 +41,17 @@ def add_time(start, duration, day = ""):
         sumHours = sumHours-12
     if sumHours == 0:
         sumHours = 12
+    
+    countString = ''
+    if count == 1:
+        countString = "(next day)"
+    elif count > 1:
+        countString = "(" + str(count) + " days later)"
 
+    new_time = str(sumHours) + ":" + str(sumMin) + " " + sign + " " + countString
 
-
-    print(sumHours, sumMin, count, sign)
-
+    print(new_time)
+    # return new_time
 
 add_time("3:30 PM", "2:12")
 
-    # return new_time
