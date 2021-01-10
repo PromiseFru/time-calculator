@@ -48,13 +48,22 @@ def add_time(start, duration, day = ""):
     elif count > 1:
         countString = "(" + str(count) + " days later)"
 
+    # days
+    dayArr = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+    ]
+    
     if day:
-        new_time = str(sumHours) + ":" + str(sumMin).zfill(2) + " " + sign + ", " + day.capitalize() + " " + countString
+        dayIndex = dayArr.index(day.capitalize())
+        new_time = str(sumHours) + ":" + str(sumMin).zfill(2) + " " + sign + ", " + dayArr[(dayIndex+count)%7] + " " + countString
     else:
         new_time = str(sumHours) + ":" + str(sumMin).zfill(2) + " " + sign + " " + countString
 
-    # print(new_time)
     return new_time.strip()
-
-# add_time("3:30 PM", "2:12", "moNday")
 
